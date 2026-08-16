@@ -35,6 +35,38 @@ images/       Static image assets
 src/server.js Application entry point
 ```
 
+## ML Service
+
+The [ML/](ML/) directory contains a standalone Flask microservice used to
+auto-evaluate student assignment answers. It compares a student's answer
+against the reference answer using keyword overlap, Word2Vec-based semantic
+similarity, grammar checking, and answer length, then writes the computed
+marks directly to MongoDB.
+
+- **Runtime:** Python 3.11, Flask
+- **NLP/ML:** `gensim` (Word2Vec via Google News pretrained vectors),
+  `nltk` (tokenization, stopwords), `language_tool_python` (grammar checking)
+- **Database:** MongoDB via `pymongo`
+- **Entry point:** [ML/main.py](ML/main.py) — run with `python main.py`
+  (serves on `http://localhost:5000` by default)
+
+### Setup
+
+1. Create a virtual environment in `ML/` and install dependencies (Flask,
+   gensim, nltk, numpy, language_tool_python, pymongo). No `requirements.txt`
+   is currently checked in — one should be generated (`pip freeze`) to pin
+   versions.
+2. Download the pretrained
+   [GoogleNews-vectors-negative300.bin](https://code.google.com/archive/p/word2vec/)
+   model (~3.4GB) and place it at `ML/GoogleNews-vectors-negative300.bin`.
+   On first run, `main.py` converts and caches it as `wv.model` /
+   `wv.model.vectors.npy` for faster subsequent loads. These files are large
+   and gitignored — they must be provided locally, not committed.
+3. `ML/stopwords.txt` is included in the repo and used for keyword matching.
+4. Set the `MONGO_URI` environment variable to your MongoDB connection
+   string before running `main.py` or `DbConn.py` — both read it via
+   `os.environ['MONGO_URI']`.
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) v16 or later

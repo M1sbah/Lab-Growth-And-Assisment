@@ -4,3 +4,16 @@ config/config.env
 
 #Ignore vscode AI rules
 .github\instructions\codacy.instructions.md
+
+# ML service (Python)
+ML/venv/
+ML/.idea/
+ML/__pycache__/
+ML/*.pyc
+
+# Pretrained/cached word vector models (multi-GB binaries)
+ML/GoogleNews-vectors-negative300.bin
+ML/wv.model
+ML/wv.model.vectors.npy
+ML/*.model
+ML/*.npy
