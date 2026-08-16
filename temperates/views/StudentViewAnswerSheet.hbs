@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Sheet</title>
+
+    <style>
+        .frame{
+            border-style: solid;
+            border: 1px;
+            width: 1000px;
+        }
+        .content{
+            position: relative;
+            border: 0;
+            outline: none;
+            top: 80px;
+            float: left;
+            left: 50px;
+            width: 1000px;
+        }
+        .display{
+            font-size: 20px;
+            width: 400px; 
+            height:30px;
+            outline: none;
+            border: 0;
+        }
+
+        .marks{
+            font-size: 20px;
+            width: 100px; 
+            height:30px;
+            outline: none;
+            border: 0;
+        }
+
+        .ques-display{
+            font-size: 20px;
+            width: 60px; 
+            height:30px;
+            outline: none;
+            border: 0;
+        }
+
+        .answer-display{
+            position: relative;
+            resize: none;
+            top: 0;
+            left: 200px;
+            font-size: 20px;
+            width: 800px; 
+            height:300px;
+            outline: none;
+            border: 0;
+        }
+
+        .paperid{
+            width: 400px;
+            height: 50px;
+            outline: none;
+            border: 0;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    {{>StudentTemp}}
+    <div class="content">
+
+        <label class="paperid">Paper ID:</label>
+        <input class="paperid" type="text" value="{{paperID}}" readonly/><br><br><br>
+
+        <label class="display">Username:</label>
+        <input class="display" type="text" value="{{username}}" readonly/><br><br>
+
+        <label class="display">Email:</label>
+        <input class="display" type="text" value="{{email}}" readonly/> <br><br>
+
+        <label class="display">Subject:</label>
+        <input class="display" type="text" value="{{subject}}" readonly/>
+
+        {{#data}}
+            <div class="frame">
+                <br><br>
+                <label class="ques-display">Ques:</label>
+                <input class="display" type="text" value="{{ques}}" readonly/><br><br>
+                
+                <textarea class="answer-display" readonly>Ans:-{{ans}}</textarea><br>
+                <label class="marks">Marks:</label>
+                <input class="marks" type="text" value="{{marks}}" readonly/><br><br><br><br>
+            </div>
+
+        {{/data}}
+
+
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+    
+</body>
+</html>

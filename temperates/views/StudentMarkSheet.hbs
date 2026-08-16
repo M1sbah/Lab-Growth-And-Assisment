@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkSheet</title>
+
+    <style>
+        .form-inline {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            }
+
+        .div-content{ 
+            border-style: solid;
+            position: sticky;
+            top: 80px;
+            float: left;
+            left: 250px;
+            width: 1000px;
+            
+        }
+        .display{
+            border: 0;
+            outline: none;
+            size: 10px;
+        }
+
+        
+        
+    </style>
+
+</head>
+<body>
+    {{>StudentTemp}}
+    {{#data}}
+        <div class="div-content">
+            <form>
+                <div class="content">
+                    {{!-- <label for="fname">Name:</label>--}}
+                    {{!-- 
+                    
+                    
+                    
+                     --}}
+
+                    <table>
+                        <tr>
+                            <td><input class="display" type="text"  value="Name:" style="width: 80px; height:30px" readonly/></td>
+                            <td><input class="display" type="text" name="username" value="{{username}}" style="width: 600px; height:30px;" readonly/></td>
+                            <td rowspan="5"><input type="submit" value="View Answer Sheet" style="width: 300px; height:140px;" formaction="studentmarksheet/studentviewsheet" formmethod="post"></td>
+                        </tr>
+                        <tr>
+                            <td><input class="display" type="text"  value="Email:" style="width: 80px; height:30px" readonly/></td>
+                            <td><input class="display" type="text" name="email" value="{{email}}" style="width: 600px; height:30px" readonly/></td>
+                        </tr>
+                        <tr>
+                            <td><input class="display" type="text"  value="PaperID:" style="width: 80px; height:30px" readonly/></td>
+                            <td><input class="display" type="text" name="pid" value="{{paperID}}" style="width: 600px; height:30px" readonly/></td>
+                        </tr>
+                        <tr>
+                            <td><input class="display" type="text"  value="subject:" style="width: 80px; height:30px" readonly/></td>
+                            <td><input class="display" type="text" name="subject" value="{{subject}}" style="width: 600px; height:30px" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><input class="display" type="text"  value="Marks:" style="width: 80px; height:30px" readonly/></td>
+                            <td><input class="display" type="text" name="marks" value="{{marks}}" style="width: 600px; height:30px" readonly/></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </form>
+        </div>
+
+    {{/data}}
+
+
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+
+    
+</body>
+</html>

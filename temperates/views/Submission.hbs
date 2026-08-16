@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+
+    <style>
+        .display{
+            border: 0;
+            outline: none;
+            size: 10px;
+        }
+        .Static-content{
+            position: sticky;
+            top: 80px;
+        }
+        .form-content{
+           position: relative;
+           top: 80px;
+           float: left;
+           left: 350px;
+        }
+        .content{
+           position: relative;
+           top: 80px;
+           float: left;
+           left: 350px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    {{>StudentTemp}}
+
+    <div class="content">
+        <form > 
+            <div class="Static-content">
+                <input class="display" type="text" value="Email:" style="width:50px" readonly/>
+                <input class="display" type="text" name="email" value="{{user.email}}" style="width:200px" readonly/>
+                <input class="display" type="text" value="Username:" style="width:80px" readonly/>
+                <input class="display" type="text" name="username" value="{{user.username}}" style="width:150px" readonly/>
+                <input class="display" type="text" value="Pid:" style="width:50px" readonly/>
+                <input class="display" type="text" name="Pid" value="{{Pid}}" readonly/>
+                <input class="display" type="text" name="subject" value="{{subject}}" readonly/>
+                <br>
+            </div>
+                {{#each data}}
+                <input class="display" type="text" value="Ques:{{@index}}" size="5" style="width: 80px; height:80px" readonly/>
+                <input class="display" type="text" name="ques" value="{{ques}}" size="5" style="width: 800px; height:80px" readonly/><br><br><br>
+                <textarea rows="5" cols="33" placeholder="Write your Answer" name="ans" style="width: 800px; height:300px" required ></textarea><br><br>
+                {{/each}}
+                <input type="submit" value="submit" style="width: 400px;" formaction="submit" formmethod="post" /><br><br><br><br>
+            </form>
+        
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    </div><!-- /#wrapper -->
+
+    
+</body>
+</html>

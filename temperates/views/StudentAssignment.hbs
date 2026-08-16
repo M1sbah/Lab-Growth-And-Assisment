@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <!------ Include the above in your HEAD tag ---------->
+
+<style>
+.content-container{
+    position: static;
+}
+.content{
+           position: relative;
+           top: 80px;
+           float: left;
+           left: 350px;
+        }
+.text{
+    border: 0;
+    outline: none;
+    size: 10px;
+}
+</style>
+</head>
+
+<body>
+    {{!-- <div>
+        {{>navbar}}<br><br>
+    </div> --}}
+    {{>StudentTemp}}
+        <div class="content">
+            {{#each assignments}}
+            <form>
+                <input class="text" type="Text" name="AsyNo" value="Assignment:{{@index}}" style="width:1000px;height:100px; readonly"/><br>
+                <input class="text" type="Text" value="Paper Id:" style="width:80px;height:100px; readonly"/>
+                <input type="submit" name="pid" value="{{this}}" style="width:1000px;height:100px;" formaction="studentassignment/next" formmethod="post"/><br>
+            </form>
+
+            {{/each}}
+        </div>
+        </div>
+        </div>
+
+        </div><!-- /#wrapper -->
+
+        
+        
+    </div>
+    
+    
+</body>
+</html>

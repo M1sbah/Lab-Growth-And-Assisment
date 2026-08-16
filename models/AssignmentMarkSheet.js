@@ -1,17 +1,24 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const markSheet = mongoose.Schema({
+    paperID:{
+        type: String,
+        required:true
+    },
     username:{
         type: String,
         required:true
     },
-    
     email:{
         type: String,
         required:true
     },
-    password:{
+    subject:{
         type: String,
+        required:true
+    },
+    marks:{
+        type:Number,
         required:true
     }
 
@@ -19,4 +26,4 @@ const userSchema = mongoose.Schema({
 
 
 
-module.exports = mongoose.model('User',userSchema);
+module.exports = mongoose.model('marksheet',markSheet);

@@ -1,0 +1,44 @@
+body   
+{  
+height: 500vh;  
+margin-top: 60px;  
+padding: 30px;  
+background-size: cover;  
+font-family: sans-serif;  
+}  
+.nav-label{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 140px;
+    width: 100%;
+    background-color: aqua;
+}
+
+#logo{
+    position: fixed;
+    top: 0;
+    background-image: url("./logo.png") no-repeat top, url("./backlogo.png");
+}
+
+header {  
+background-color: rgb(80, 140, 229);  
+position: fixed;  
+left: 0;  
+right: 30px;  
+top: 110px;  
+height: 30px;  
+display: flex;  
+align-items: center;  
+box-shadow: 0 0 25px 0 black;  
+}  
+header * {  
+display: inline;  
+}  
+header li {  
+margin: 20px;  
+}  
+header li a {  
+color: blue;  
+text-decoration: none;  
+}  

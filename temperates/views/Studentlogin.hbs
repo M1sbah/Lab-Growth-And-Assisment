@@ -1,0 +1,59 @@
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/login.css">
+
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://pluspng.com/img-png/png-user-icon-circled-user-icon-2240.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="/student" method="POST" class="login">
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="Student">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Script
+    <script>
+        const formEl=document.querySelector('.login');
+        formEl.addEventListener('submit',event => {
+
+          event.preventDefault();
+          const formData= new FormData(formEl);
+          const data=Object.fromEntries(formData);
+          
+          fetch('/api/todo/auth/login',{
+            method: 'POST',
+            headers:{
+              'Content-Type':'application/json'
+            },
+            body:JSON.stringify(data)
+
+          }).then(res =>  res.json())
+          .then(data => console.log(data))
+          .catch(error => console.log(error));
+
+        });
+
+
+  </script>-->
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+      <a class="underlineHover" href="admin/register">Register</a>
+    </div>
+
+  </div>
+</div>

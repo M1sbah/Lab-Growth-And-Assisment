@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <!------ Include the above in your HEAD tag ---------->
+
+<style>
+.content-container{
+    position: static;
+}
+.content{
+           position: relative;
+           top: 80px;
+           float: left;
+           left: 350px;
+        }
+.text{
+    border: 0;
+    outline: none;
+    size: 10px;
+}
+</style>
+</head>
+
+<body>
+    {{!-- <div>
+        {{>navbar}}<br><br>
+    </div> --}}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars" aria-hidden="true" style="color: white;"></i>
+                    </button>
+                    <div class="navbar-brand">   
+                    </div>
+                </div>
+
+        <div id="throbber" style="display:none; min-height:120px;"></div>
+        <div id="noty-holder"></div>
+
+        <div id="wrapper">
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse" style="background-color: #616060; border:1px solid #616060;">
+                    <ul class="nav navbar-nav side-nav">
+                    <a href="#"><img class="logostyle" src="https://pluspng.com/img-png/png-user-icon-circled-user-icon-2240.png" alt="LOGO""></a>
+                        <li>
+                        <a class="active" href="../admin" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-home" aria-hidden="true"></i>   <span style="color:white;">  Home </span></a>
+                        </li>
+                        <li>
+                            <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-user-o" aria-hidden="true"></i>   <span style="color:white;">  Profile </span></a>
+                        </li>
+                        <li>
+                            <a class="#" href="../assignment/create" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-calendar" aria-hidden="true"></i>   <span style="color:white;"> Assignment </span></a>
+                        </li>
+                        <li>
+                            <a class="#" href="../marksheet" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-cogs" aria-hidden="true"></i>   <span style="color:white;"> Marks </span></a>
+                        </li>
+                                                <li>
+                            <a class="#" href="../logout" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Logout </span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+        </nav>
+
+
+        <div class="container-fluid">
+        <div class="row text-center">
+        <div class="col-md-12 dashhead">
+        <h1> Welcome To LabG</h1>
+        </div>
+        <div class="content">
+            {{#each assignments}}
+            <input class="text" type="Text" name="AsyNo" value="Assignment:{{@index}}" style="width:1000px;height:100px; readonly"/><br>
+            <input class="text" type="Text" value="Paper Id:" style="width:80px;height:100px; readonly"/>
+            <input type="button" name="pid" value="{{this}}" style="width:1000px;height:100px;"/><br>
+
+            {{!-- {{@index}}: {{this}}<br> --}}
+            {{/each}}
+        </div>
+        </div>
+        </div>
+
+        </div><!-- /#wrapper -->
+
+        
+        
+    </div>
+    
+    
+</body>
+</html>
