@@ -66,6 +66,31 @@ marks directly to MongoDB.
 4. Set the `MONGO_URI` environment variable to your MongoDB connection
    string before running `main.py` or `DbConn.py` — both read it via
    `os.environ['MONGO_URI']`.
+5. A Java Runtime Environment (JRE) must be installed and on `PATH` —
+   `language_tool_python` launches a local LanguageTool server on first use.
+
+### Running
+
+```bash
+cd ML
+python -m venv venv
+venv\Scripts\activate        # Windows; use `source venv/bin/activate` on macOS/Linux
+pip install flask gensim nltk numpy language_tool_python pymongo
+
+set MONGO_URI=<your MongoDB connection string>   # Windows; use `export` on macOS/Linux
+python main.py
+```
+
+On startup, `main.py` downloads NLTK's `punkt` and `stopwords` corpora (needs
+internet access the first time), then loads the Word2Vec model — this can
+take a while and use several GB of RAM. The service listens on
+`http://localhost:5000` with `debug=True`.
+
+- `GET /` — health-check style endpoint; echoes the `sans`/`tans` query params.
+- `POST /` — evaluates one or more question/answer pairs and writes marks to
+  the `answersheets` and `marksheets` MongoDB collections. Expects a JSON
+  body with `Pid`, `email`, `username`, `subject`, `ques` and `ans` (each
+  either a single string or parallel arrays for multiple questions).
 
 ## Prerequisites
 
